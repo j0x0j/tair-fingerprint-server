@@ -23,11 +23,13 @@ function respond (req, res, next) {
       exec(cmd.join(' '), (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`)
-          res.json({ status: 'error' })
-          return;
+          res.json(500, { status: 'error' })
+        } else {
+          res.json(JSON.parse(stdout))
         }
-        res.json(JSON.parse(stdout))
-        next()
+        fs.unlink(SAMPLE_PATH, (err) => {
+          next(err)
+        })
       })
     })
 }
