@@ -1,0 +1,27 @@
+{
+  "name": "dejavu-server",
+  "version": "1.0.0",
+  "description": "Server to handle samples and fingerprint recognition",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/j0x0j/tair-fingerprint-server.git"
+  },
+  "keywords": [
+    "tair",
+    "fingerprint",
+    "recognition"
+  ],
+  "author": "Joel Martínez @j0x0j",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j0x0j/tair-fingerprint-server/issues"
+  },
+  "homepage": "https://github.com/j0x0j/tair-fingerprint-server#readme",
+  "dependencies": {
+    "restify": "^6.3.2"
+  }
+}

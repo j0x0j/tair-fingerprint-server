@@ -1,0 +1,4 @@
+/node_modules/
+/samples/
+.env
+.DS_Store
