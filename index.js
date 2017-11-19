@@ -14,7 +14,7 @@ function respond (req, res, next) {
         'python2.7',
         `${DEJAVU_APP_PATH}/dejavu.py`,
         '--config',
-        `${DEJAVU_APP_PATH}/dejavu.cnf.SAMPLE`,
+        `${DEJAVU_APP_PATH}/dejavu.cnf`,
         '--recognize',
         'file',
         SAMPLE_PATH,
