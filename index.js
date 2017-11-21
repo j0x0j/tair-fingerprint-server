@@ -34,6 +34,12 @@ function respond (req, res, next) {
     })
 }
 
+function handleHealth (req, res, next) {
+  res.json({
+    status: 'OK'
+  })
+}
+
 const server = restify.createServer()
 
 server.use(restify.plugins.bodyParser({
@@ -42,6 +48,9 @@ server.use(restify.plugins.bodyParser({
 
 server.post('/sample', respond)
 server.head('/sample', respond)
+
+server.get('/health', handleHealth)
+server.head('/health', handleHealth)
 
 server.listen(process.env.PORT || 8080, () => {
   console.log('%s listening at %s', server.name, server.url)
