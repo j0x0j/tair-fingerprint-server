@@ -32,15 +32,21 @@ function handleSample (req, res, next) {
       ]
 
       exec(cmd.join(' '), (error, stdout, stderr) => {
-        if (error) {
-          console.error(`exec error: ${error}`)
-          res.json(500, { status: 'error' })
-        } else {
-          res.json(JSON.parse(stdout))
-        }
         fs.unlink(SAMPLE_PATH, (err) => {
+          if (error) {
+            console.error(`exec error: ${error}`)
+            res.json(500, { status: 'error' })
+          } else {
+            res.json(JSON.parse(stdout))
+          }
           next(err)
         })
+      })
+    })
+    .on('error', (error) => {
+      console.error(`file error: ${error}`)
+      fs.unlink(SAMPLE_PATH, (err) => {
+        next(err)
       })
     })
 }
