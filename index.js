@@ -4,7 +4,7 @@ const mysql = require('mysql')
 const { exec } = require('child_process')
 const corsMiddleware = require('restify-cors-middleware')
 
-const DEJAVU_APP_PATH = __dirname + '/../dejavu2'
+const DEJAVU_APP_PATH = __dirname + '/../dejavu'
 
 // MySQL config
 
