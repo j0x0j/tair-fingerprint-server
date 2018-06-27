@@ -23,7 +23,7 @@ function handleSample (req, res, next) {
     .pipe(fs.createWriteStream(SAMPLE_PATH))
     .on('finish', () => {
       const cmd = [
-        'python3',
+        'python2.7',
         `${DEJAVU_APP_PATH}/dejavu.py`,
         '--config',
         `${DEJAVU_APP_PATH}/dejavu.cnf`,
@@ -67,7 +67,7 @@ function handleFingerprint (req, res, next) {
     .pipe(fs.createWriteStream(CREATIVE_PATH))
     .on('finish', () => {
       const cmd = [
-        'python3',
+        'python2.7',
         `${DEJAVU_APP_PATH}/dejavu.py`,
         '--config',
         `${DEJAVU_APP_PATH}/dejavu.cnf`,
