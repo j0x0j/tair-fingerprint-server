@@ -6,9 +6,8 @@ const {
   handleFingerprint,
   handleRemoveFingerprint
 } = require('./lib/fingerprint')
-const {
-  handleSample
-} = require('./lib/sample')
+const { handleSample } = require('./lib/sample')
+const { transcodeCreative } = require('./lib/transcoder')
 
 function handleHealth (req, res, next) {
   res.json({
@@ -38,7 +37,7 @@ server.head('/health', handleHealth)
 server.post('/sample', handleSample)
 
 // Create fingerprint data
-server.post('/fingerprint', handleFingerprint)
+server.post('/fingerprint', transcodeCreative, handleFingerprint)
 
 // Delete a fingerprint
 server.del('/fingerprint/:name', handleRemoveFingerprint)
