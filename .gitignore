@@ -1,5 +1,6 @@
 /node_modules/
 /samples/
+/creatives/
 .env
 .DS_Store
 dejavu.log

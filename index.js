@@ -3,6 +3,7 @@ const corsMiddleware = require('restify-cors-middleware')
 const { dbClient } = require('./lib/db')
 
 const {
+  downloadCreative,
   handleFingerprint,
   handleRemoveFingerprint
 } = require('./lib/fingerprint')
@@ -37,7 +38,12 @@ server.head('/health', handleHealth)
 server.post('/sample', handleSample)
 
 // Create fingerprint data
-server.post('/fingerprint', transcodeCreative, handleFingerprint)
+server.post(
+  '/fingerprint',
+  downloadCreative,
+  transcodeCreative,
+  handleFingerprint
+)
 
 // Delete a fingerprint
 server.del('/fingerprint/:name', handleRemoveFingerprint)
