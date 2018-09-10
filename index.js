@@ -16,7 +16,11 @@ function handleHealth (req, res, next) {
   })
 }
 
-const server = restify.createServer()
+const server = restify.createServer({
+  httpsServerOptions: {
+    timeout: 240000 // 4 minutes
+  }
+})
 
 server.use(restify.plugins.bodyParser({
   mapFiles: true
