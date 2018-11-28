@@ -5,7 +5,8 @@ const { dbClient } = require('./lib/db')
 const {
   downloadCreative,
   handleFingerprint,
-  handleRemoveFingerprint
+  handleRemoveFingerprint,
+  handleGetNodeMessages
 } = require('./lib/fingerprint')
 const { handleSample } = require('./lib/sample')
 const { transcodeCreative } = require('./lib/transcoder')
@@ -50,6 +51,10 @@ server.post(
 
 // Delete a fingerprint
 server.del('/fingerprint/:name', handleRemoveFingerprint)
+
+// Get messages for a dejavu node
+server.get('/messages/:node', handleGetNodeMessages)
+server.head('/messages/:node', handleGetNodeMessages)
 
 server.listen(process.env.PORT || 8080, () => {
   // Connect to dejavu DB

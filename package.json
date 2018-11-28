@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/j0x0j/tair-fingerprint-server#readme",
   "dependencies": {
+    "async": "^2.6.1",
     "dotenv": "^6.0.0",
     "mysql": "^2.15.0",
+    "request": "^2.88.0",
     "restify": "^7.2.1",
     "restify-cors-middleware": "^1.1.0"
   }
