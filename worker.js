@@ -25,7 +25,7 @@ const main = async function () {
     const messagesResponse =
       await get(`${MASTER_DEJAVU_URL}/messages/${NODE_NAME}`, { json: true })
     // post to local server for download and fingerprint
-    messagesResponse.body.messages.forEach(async message => {
+    for (const message of messagesResponse.body.messages) {
       const creativeId = message.creative_id
       // get creative details
       const creativeResponse =
@@ -39,7 +39,7 @@ const main = async function () {
         json: true
       })
       console.log('messageResponse', messageResponse.body)
-    })
+    }
   } catch (error) {
     console.log(error.message)
     // Should notify owner
