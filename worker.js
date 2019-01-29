@@ -12,7 +12,7 @@ const S3_PATH = `https://s3.us-east-2.amazonaws.com/${S3_BUCKET}`
 const get = util.promisify(request.get)
 const post = util.promisify(request.post)
 const del = util.promisify(request.del)
-const fingerprintUrl = 'http://localhost:8081/fingerprint'
+const fingerprintUrl = 'http://localhost:8080/fingerprint'
 
 const main = async function () {
   if (NODE_NAME === 'd0') {
