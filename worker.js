@@ -65,8 +65,8 @@ const main = async function () {
 }
 
 const rule = new schedule.RecurrenceRule()
-// Runs every 5 minutes past the hour
-rule.minute = 5
+// Runs every 45 minutes past the hour
+rule.minute = 45
 
 const job = schedule.scheduleJob(rule, main)
 
