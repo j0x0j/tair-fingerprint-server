@@ -50,7 +50,7 @@ server.post(
 )
 
 // Delete a fingerprint
-server.del('/fingerprint/:name', handleRemoveFingerprint)
+server.del('/fingerprint/:creative', handleRemoveFingerprint)
 
 // Get messages for a dejavu node
 server.get('/messages/:node', handleGetNodeMessages)
